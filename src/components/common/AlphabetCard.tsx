@@ -14,6 +14,7 @@ interface Props {
 const Styles = styled.div`
     margin: 16px;
     font-size: 32px;
+    font-weight: bold;
     color: white;
     display: inline-block;
 `
@@ -23,19 +24,23 @@ export const AlphabetCard = ({ className, alphabetItem, colour }: Props) => {
         <Styles className={classNames(className)}>
             <FlipCard
                 width={375}
-                height={240}
+                height={260}
                 frontNode={
                     <InnerCardStyles $colour={colour}>
                         <img src={alphabetItem.imgSrc} />
-                        <PrimaryLetterStyles>
-                            <UighurTextStyles>
-                                {alphabetItem.alphabet}
-                            </UighurTextStyles>
-                        </PrimaryLetterStyles>
-                        <UighurTextStyles>
-                            {alphabetItem.imgName}
-                        </UighurTextStyles>
-                        <div>{alphabetItem.imgNameTranslation}</div>
+                        <ContentStyles>
+                            <PrimaryLetterStyles>
+                                <UighurTextStyles>
+                                    {alphabetItem.alphabet}
+                                </UighurTextStyles>
+                            </PrimaryLetterStyles>
+                            <SecondaryLetterStyles>
+                                <UighurTextStyles>
+                                    {alphabetItem.imgName}
+                                </UighurTextStyles>
+                                <div>{alphabetItem.imgNameTranslation}</div>
+                            </SecondaryLetterStyles>
+                        </ContentStyles>
                     </InnerCardStyles>
                 }
                 backNode={
@@ -58,8 +63,15 @@ const InnerCardStyles = styled.div<{ $colour: string }>`
 const PrimaryLetterStyles = styled.div`
     font-size: 120px;
     color: white;
+`
+
+const SecondaryLetterStyles = styled.div`
+    text-align: right;
+`
+
+const ContentStyles = styled.div`
     display: inline-block;
     position: absolute;
-    top: 16px;
-    right: 24px;
+    top: 24px;
+    right: 32px;
 `
