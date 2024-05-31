@@ -10,7 +10,7 @@ interface Props {
     rtl?: boolean
 }
 
-const Styles = styled.div`
+const Styles = styled.span`
     display: flex;
     padding: 8px 12px;
     align-items: center;
@@ -26,10 +26,8 @@ const Styles = styled.div`
         }
     }
 
-    &:hover {
-        transform: scale(1.05);
-        background-color: rgba(0, 0, 0, 0.05);
-        border-radius: 13px;
+    * {
+        transform: unset !important;
     }
 `
 

@@ -27,7 +27,8 @@ const Styles = styled.div<{ $width: number; $height: number }>`
 
         .front-node {
             img {
-                transform: scale(1.1);
+                transform: scale(1.07);
+                transform-origin: bottom right;
             }
             > div {
                 &::before {
@@ -37,11 +38,26 @@ const Styles = styled.div<{ $width: number; $height: number }>`
                     bottom: 0;
                     right: 0;
                     left: 0;
-                    background-color: rgba(0, 0, 0, 0.12);
+                    background-color: rgba(0, 0, 0, 0.08);
                     border-radius: var(--border-radius);
                 }
                 div {
                     transform: scale(1.05);
+                }
+            }
+        }
+
+        .back-node {
+            > div {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.08);
+                    border-radius: var(--border-radius);
                 }
             }
         }
