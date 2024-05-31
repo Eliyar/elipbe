@@ -15,7 +15,7 @@ export const Logo = ({ className }: Props) => {
     return (
         <Styles
             className={classNames(className)}
-            src={`${process.env.PUBLIC_URL}/assets/images/Logo.svg`}
+            src={`${process.env.PUBLIC_URL}/assets/images/logo.svg`}
             alt="Logo"
         ></Styles>
     )

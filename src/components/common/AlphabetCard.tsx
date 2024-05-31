@@ -27,7 +27,7 @@ export const AlphabetCard = ({ className, alphabetItem, colour }: Props) => {
                 height={260}
                 frontNode={
                     <InnerCardStyles $colour={colour}>
-                        <img src={alphabetItem.imgSrc} />
+                        <IllustrationStyles src={alphabetItem.imgSrc} />
                         <ContentStyles>
                             <PrimaryLetterStyles>
                                 <UighurTextStyles>
@@ -67,6 +67,16 @@ const PrimaryLetterStyles = styled.div`
 
 const SecondaryLetterStyles = styled.div`
     text-align: right;
+`
+
+const IllustrationStyles = styled.img`
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 32px;
+    position: absolute;
+    top: -40px;
+    left: -32px;
 `
 
 const ContentStyles = styled.div`
