@@ -12,11 +12,24 @@ interface Props {
 
 const Styles = styled.div`
     display: flex;
+    padding: 8px 12px;
     align-items: center;
+    transition: transform var(--transition-duration) ease;
+    transform-origin: center;
 
     .logo-wrapper {
-        margin-right: 8px;
-        margin-left: 8px;
+        &:first-child {
+            margin-right: 8px;
+        }
+        &:last-child {
+            margin-left: 8px;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 13px;
     }
 `
 
