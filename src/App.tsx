@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import styled from 'styled-components'
 
 import { AlphabetsList } from './components/AlphabetsList'
+import { LogoTitle } from './components/common/LogoTitle'
 import { UighurTextStyles } from './components/common/styles'
 
 interface Props {
@@ -20,19 +21,24 @@ export const App = ({ className }: Props) => {
 }
 
 const HeaderStyles = styled.div`
-    margin: 24px 0 50px 0;
-    font-size: 60px;
+    margin: 24px 24px 50px 24px;
+    font-size: 32px;
     font-weight: 600;
     text-align: center;
-    color: #666;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
 
 const Header = () => {
     return (
         <HeaderStyles>
-            <span>Elipbe</span>
-            <span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;</span>
-            <UighurTextStyles>ئيلىپبە</UighurTextStyles>
+            <LogoTitle title="Elipbe" />
+            <LogoTitle
+                title={<UighurTextStyles>ئيلىپبە</UighurTextStyles>}
+                rtl
+            />
         </HeaderStyles>
     )
 }
