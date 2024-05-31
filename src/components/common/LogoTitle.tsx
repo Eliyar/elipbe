@@ -16,6 +16,10 @@ const Styles = styled.span`
     align-items: center;
     transition: transform var(--transition-duration) ease;
     transform-origin: center;
+    font-family: 'Work Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 
     .logo-wrapper {
         &:first-child {

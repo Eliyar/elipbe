@@ -116,6 +116,9 @@ const LogoTitleStyles = styled.div`
     justify-content: center;
     font-size: 22px;
     font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 
     img {
         width: 34px;

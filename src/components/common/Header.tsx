@@ -16,7 +16,7 @@ const Styles = styled.div<{ $isMd: boolean }>`
     font-size: 32px;
     font-weight: 600;
     text-align: center;
-    color: #555;
+    color: #454bb1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,7 +28,7 @@ const Styles = styled.div<{ $isMd: boolean }>`
     ${({ $isMd }) =>
         $isMd &&
         css`
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 32px;
 
             img {
