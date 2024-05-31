@@ -11,12 +11,40 @@ interface Props {
 }
 
 const Styles = styled.div<{ $width: number; $height: number }>`
-    transition: transform 0.3s ease;
+    --border-radius: 32px;
+    --transition-duration: 0.3s;
+
+    transition: all var(--transition-duration) ease;
     transform-origin: center;
+
+    .front-node * {
+        transition: all var(--transition-duration) ease;
+    }
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.1);
+        transform: scale(1.05);
+
+        .front-node {
+            img {
+                transform: scale(1.1);
+            }
+            > div {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.12);
+                    border-radius: var(--border-radius);
+                }
+                div {
+                    transform: scale(1.05);
+                }
+            }
+        }
     }
 
     .flip-container.flipped .flipper {

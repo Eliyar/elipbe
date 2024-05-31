@@ -70,13 +70,12 @@ const SecondaryLetterStyles = styled.div`
 `
 
 const IllustrationStyles = styled.img`
-    width: 300px;
+    width: 280px;
     height: auto;
     object-fit: cover;
-    border-radius: 32px;
     position: absolute;
     top: -40px;
-    left: -32px;
+    left: -16px;
 `
 
 const ContentStyles = styled.div`
