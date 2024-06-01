@@ -3,6 +3,7 @@ export type AlphabetItem = {
     imgSrc: string
     imgName: string
     imgNameTranslation: string
+    alts: string[]
 }
 
 export const ALPHABET_ITEMS: AlphabetItem[] = [
@@ -11,144 +12,36 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
         imgName: 'ئات',
         imgNameTranslation: 'Horse',
+        alts: [
+            `${process.env.PUBLIC_URL}/assets/images/alts/1_1.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/1_2.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/1_3.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/1_4.gif`,
+        ],
     },
     {
         alphabet: 'ئە',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
         imgName: 'ئەينەك',
         imgNameTranslation: 'Mirror',
+        alts: [
+            `${process.env.PUBLIC_URL}/assets/images/alts/2_1.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/2_2.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/2_3.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/2_4.gif`,
+        ],
     },
     {
-        alphabet: 'ب‎',
+        alphabet: 'ب',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
+        imgName: 'ب',
         imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Arabic_alif.png',
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
-    },
-    {
-        alphabet: 'ئا',
-        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Arabic_alif.png',
-        imgName: 'ئات',
-        imgNameTranslation: 'Horse',
-    },
-    {
-        alphabet: 'ئە',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
-        imgName: 'ئەينەك',
-        imgNameTranslation: 'Mirror',
-    },
-    {
-        alphabet: 'ب‎',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب‎',
-        imgNameTranslation: 'Fish',
+        alts: [
+            `${process.env.PUBLIC_URL}/assets/images/alts/3_1.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/3_2.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/3_3.gif`,
+            `${process.env.PUBLIC_URL}/assets/images/alts/3_4.gif`,
+        ],
     },
 ]
 

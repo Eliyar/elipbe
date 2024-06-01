@@ -16,12 +16,27 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
     margin: 16px;
     font-size: 32px;
     font-weight: bold;
-    color: white;
     display: inline-block;
+
+    .front-node {
+        color: white;
+
+        .outer-content {
+            background-color: ${(props) => props.$colour};
+        }
+    }
+
+    .back-node {
+        color: #444;
+
+        .outer-content {
+            /* background-color: ${(props) => props.$colour}2c; */
+            background-color: #d5d5d5;
+        }
+    }
 
     .outer-content {
         height: 100%;
-        background-color: ${(props) => props.$colour};
         border-radius: 32px;
         position: relative;
     }
@@ -34,21 +49,37 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
 
         .primary-letter {
             font-size: 120px;
-            color: white;
+            text-align: right;
         }
 
         .secondary-letter {
             text-align: right;
         }
+
+        .alt-letter {
+            font-size: 60px;
+            text-align: right;
+        }
     }
 
-    img {
-        width: 280px;
-        height: auto;
-        object-fit: cover;
-        position: absolute;
-        top: -40px;
-        left: -16px;
+    .front-node {
+        img {
+            width: 280px;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            top: -40px;
+            left: -16px;
+        }
+    }
+
+    .back-node {
+        img {
+            margin-left: 16px;
+            width: auto;
+            height: 60px;
+            object-fit: cover;
+        }
     }
 
     ${({ $isMd }) =>
@@ -64,12 +95,18 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
                 .primary-letter {
                     font-size: 50px !important;
                 }
+
+                .alt-letter {
+                    font-size: 32px !important;
+                }
             }
 
-            img {
-                width: 140px;
-                top: -20px;
-                left: -8px;
+            .front-node img {
+                img {
+                    width: 140px;
+                    top: -20px;
+                    left: -8px;
+                }
             }
         `}
 `
@@ -106,7 +143,26 @@ export const AlphabetCard = ({
                         </div>
                     </div>
                 }
-                backNode={<div className="outer-content">[back-of-card]</div>}
+                backNode={
+                    <div className="outer-content">
+                        <div className="inner-content">
+                            <div className="primary-letter">
+                                <UighurTextStyles>
+                                    {alphabetItem.alphabet}
+                                </UighurTextStyles>
+                            </div>
+                            <div>
+                                {alphabetItem.alts.reverse().map((alt, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={alt}
+                                        alt={alphabetItem.imgNameTranslation}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                }
             />
         </Styles>
     )
