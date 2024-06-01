@@ -79,7 +79,7 @@ export const Footer = ({ className }: Props) => {
                     <LogoTitleStyles className="content-center">
                         <span>Elipbe</span>
                         <Logo />
-                        <UighurTextStyles>ئيلىپبە</UighurTextStyles>
+                        <UighurTextStyles>ئېلىپبە</UighurTextStyles>
                     </LogoTitleStyles>
                 </>
             ) : (
@@ -87,7 +87,7 @@ export const Footer = ({ className }: Props) => {
                     <LogoTitleStyles>
                         <span>Elipbe</span>
                         <Logo />
-                        <UighurTextStyles>ئيلىپبە</UighurTextStyles>
+                        <UighurTextStyles>ئېلىپبە</UighurTextStyles>
                     </LogoTitleStyles>
                     <MadeWithLoveStyles>
                         <span>Made with&nbsp;</span>

@@ -48,7 +48,7 @@ export const Header = ({ className }: Props) => {
                 frontNode={<LogoTitle title="Elipbe" />}
                 backNode={
                     <LogoTitle
-                        title={<UighurTextStyles>ئيلىپبە</UighurTextStyles>}
+                        title={<UighurTextStyles>ئېلىپبە</UighurTextStyles>}
                         rtl
                     />
                 }
