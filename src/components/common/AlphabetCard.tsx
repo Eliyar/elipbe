@@ -2,7 +2,9 @@ import classNames from 'classnames'
 import styled, { css } from 'styled-components'
 
 import { AlphabetItem } from '../../constants'
+import AudioPlayer from './AudioPlayer'
 import { FlipCard } from './FlipCard'
+import { IconButton } from './IconButton'
 import { UighurTextStyles } from './styles'
 
 interface Props {
@@ -79,6 +81,12 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
             width: auto;
             height: 60px;
             object-fit: cover;
+        }
+
+        .controls {
+            position: absolute;
+            top: 16px;
+            left: 0px;
         }
     }
 
@@ -159,6 +167,11 @@ export const AlphabetCard = ({
                                         alt={alphabetItem.imgNameTranslation}
                                     />
                                 ))}
+                            </div>
+                            <div className="controls">
+                                <AudioPlayer audioSrc={alphabetItem.audioSrc}>
+                                    <IconButton icon="brand_awareness" />
+                                </AudioPlayer>
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ export type AlphabetItem = {
     imgSrc: string
     imgName: string
     imgNameTranslation: string
+    audioSrc: string
     alts: string[]
 }
 
@@ -12,6 +13,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-horse.png`,
         imgName: 'ئات',
         imgNameTranslation: 'Horse',
+        audioSrc: `${process.env.PUBLIC_URL}/assets/audio/1.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/1_1.gif`,
             `${process.env.PUBLIC_URL}/assets/images/alts/1_2.gif`,
@@ -24,6 +26,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-mirror.png`,
         imgName: 'ئەينەك',
         imgNameTranslation: 'Mirror',
+        audioSrc: `${process.env.PUBLIC_URL}/assets/audio/2.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/2_1.gif`,
             `${process.env.PUBLIC_URL}/assets/images/alts/2_2.gif`,
@@ -36,6 +39,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
         imgName: 'ب',
         imgNameTranslation: 'Fish',
+        audioSrc: `${process.env.PUBLIC_URL}/assets/audio/3.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/3_1.gif`,
             `${process.env.PUBLIC_URL}/assets/images/alts/3_2.gif`,
