@@ -15,6 +15,13 @@ const AudioPlayer = ({ className, audioSrc, children }: Props) => {
 
     const handlePlay = useCallback((event: any) => {
         event.stopPropagation()
+        try {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            audioRef.current.currentTime = 0
+        } catch (error) {
+            console.error(error)
+        }
         audioRef.current?.play()
     }, [])
 

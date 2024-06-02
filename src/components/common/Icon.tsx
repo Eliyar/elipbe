@@ -22,8 +22,8 @@ export const Icon = ({ className, icon, onClick }: Props) => {
                 hover: !!onClick,
             })}
             onClick={(event) => {
-                event.stopPropagation()
                 if (onClick) {
+                    event.stopPropagation()
                     onClick()
                 }
             }}
