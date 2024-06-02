@@ -7,7 +7,8 @@ interface Props {
     width: number
     height: number
     frontNode: ReactNode
-    backNode: ReactNode
+    backNode(isFlipped: boolean): ReactNode
+    onFlip?(): void
 }
 
 const Styles = styled.div<{ $width: number; $height: number }>`
@@ -90,6 +91,7 @@ export const FlipCard = ({
     height,
     frontNode,
     backNode,
+    onFlip,
 }: Props) => {
     const [isFlipped, setIsFlipped] = useState<boolean>(false)
 
@@ -98,7 +100,13 @@ export const FlipCard = ({
             className={classNames(className)}
             $width={width}
             $height={height}
-            onClick={() => setIsFlipped((prev) => !prev)}
+            onClick={(event) => {
+                event.stopPropagation()
+                setIsFlipped((prev) => !prev)
+                if (onFlip) {
+                    onFlip()
+                }
+            }}
         >
             <div
                 className={classNames('flip-container', {
@@ -107,7 +115,7 @@ export const FlipCard = ({
             >
                 <div className="flipper">
                     <div className="front-node">{frontNode}</div>
-                    <div className="back-node">{backNode}</div>
+                    <div className="back-node">{backNode(isFlipped)}</div>
                 </div>
             </div>
         </Styles>

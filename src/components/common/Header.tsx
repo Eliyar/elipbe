@@ -46,12 +46,12 @@ export const Header = ({ className }: Props) => {
                 width={160}
                 height={isMd ? 48 : 56}
                 frontNode={<LogoTitle title="Elipbe" />}
-                backNode={
+                backNode={() => (
                     <LogoTitle
                         title={<UighurTextStyles>ئېلىپبە</UighurTextStyles>}
                         rtl
                     />
-                }
+                )}
             />
             <div />
         </Styles>

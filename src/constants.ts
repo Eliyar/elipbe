@@ -447,3 +447,5 @@ export const COLOURS = [
     '#9e9e9e',
     '#607d8b',
 ]
+
+export const MAX_GIF_ANIMATIONS = 3
