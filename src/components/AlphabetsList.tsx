@@ -11,6 +11,7 @@ interface Props {
 
 const Styles = styled.div`
     text-align: center;
+    direction: rtl;
 `
 
 export const AlphabetsList = ({ className }: Props) => {
