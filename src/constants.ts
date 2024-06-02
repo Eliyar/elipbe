@@ -36,8 +36,8 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ب',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-hammer.png`,
-        imgName: 'ب',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-fish.png`,
+        imgName: 'بىلىق',
         imgNameTranslation: 'Fish',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/3.wav`,
         alts: [
@@ -49,9 +49,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'پ',
-        imgSrc: '',
-        imgName: 'پ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-boat.png`,
+        imgName: 'پاراخوت',
+        imgNameTranslation: 'Boat',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/4.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/4_1.gif`,
@@ -62,9 +62,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ت',
-        imgSrc: '',
-        imgName: 'ت',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-watermelon.png`,
+        imgName: 'تاۋۇز',
+        imgNameTranslation: 'Watermelon',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/5.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/5_1.gif`,
@@ -75,9 +75,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ج',
-        imgSrc: '',
-        imgName: 'ج',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-furcoat2.png`,
+        imgName: 'جۇۋا',
+        imgNameTranslation: 'Fur Coat',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/6.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/6_1.gif`,
@@ -88,9 +88,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'چ',
-        imgSrc: '',
-        imgName: 'چ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-kettle.png`,
+        imgName: 'چۆگۈن',
+        imgNameTranslation: 'Kettle',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/7.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/7_1.gif`,
@@ -101,9 +101,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'خ',
-        imgSrc: '',
-        imgName: 'خ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-rooster.png`,
+        imgName: 'خوراز',
+        imgNameTranslation: 'Rooster',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/8.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/8_1.gif`,
@@ -114,9 +114,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'د',
-        imgSrc: '',
-        imgName: 'د',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-doctor.png`,
+        imgName: 'دوكتور',
+        imgNameTranslation: 'Doctor',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/9.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/9_1.gif`,
@@ -125,9 +125,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ر',
-        imgSrc: '',
-        imgName: 'ر',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-rocket.png`,
+        imgName: 'راكېتا',
+        imgNameTranslation: 'Rocket',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/10.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/10_1.gif`,
@@ -136,9 +136,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ز',
-        imgSrc: '',
-        imgName: 'ز',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-giraffe.png`,
+        imgName: 'زىراپە',
+        imgNameTranslation: 'Giraffe',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/11.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/11_1.gif`,
@@ -147,9 +147,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ژ',
-        imgSrc: '',
-        imgName: 'ژ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-journal.png`,
+        imgName: 'ژۇرنال',
+        imgNameTranslation: 'Journal',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/12.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/12_1.gif`,
@@ -158,9 +158,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'س',
-        imgSrc: '',
-        imgName: 'س',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-clock.png`,
+        imgName: 'سائەت',
+        imgNameTranslation: 'Clock',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/13.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/13_1.gif`,
@@ -171,9 +171,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ش',
-        imgSrc: '',
-        imgName: 'ش',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-lion2.png`,
+        imgName: 'شىر',
+        imgNameTranslation: 'Lion',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/14.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/14_1.gif`,
@@ -184,9 +184,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'غ',
-        imgSrc: '',
-        imgName: 'غ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-goose.png`,
+        imgName: 'غاز',
+        imgNameTranslation: 'Goose',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/15.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/15_1.gif`,
@@ -197,9 +197,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ف',
-        imgSrc: '',
-        imgName: 'ف',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-fountain.png`,
+        imgName: 'فونتان',
+        imgNameTranslation: 'Fountain',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/16.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/16_1.gif`,
@@ -210,9 +210,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ق',
-        imgSrc: '',
-        imgName: 'ق',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-sheep.png`,
+        imgName: 'قوي',
+        imgNameTranslation: 'Sheep',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/17.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/17_1.gif`,
@@ -223,9 +223,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ك',
-        imgSrc: '',
-        imgName: 'ك',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-cow.png`,
+        imgName: 'كالا',
+        imgNameTranslation: 'Cow',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/18.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/18_1.gif`,
@@ -236,9 +236,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'گ',
-        imgSrc: '',
-        imgName: 'گ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-flowers.png`,
+        imgName: 'گۇل',
+        imgNameTranslation: 'Flowers',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/19.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/19_1.gif`,
@@ -249,9 +249,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ڭ',
-        imgSrc: '',
-        imgName: 'ڭ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-tshirt.png`,
+        imgName: 'كۆڭلەك',
+        imgNameTranslation: 'Shirt',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/20.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/20_1.gif`,
@@ -262,9 +262,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ل',
-        imgSrc: '',
-        imgName: 'ل',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-kite.png`,
+        imgName: 'لەگلەك',
+        imgNameTranslation: 'Kite',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/21.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/21_1.gif`,
@@ -275,9 +275,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'م',
-        imgSrc: '',
-        imgName: 'م',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-monkey.png`,
+        imgName: 'مايمۇن',
+        imgNameTranslation: 'Monkey',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/22.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/22_1.gif`,
@@ -288,9 +288,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ن',
-        imgSrc: '',
-        imgName: 'ن',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-naan.png`,
+        imgName: 'نان',
+        imgNameTranslation: 'Naan',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/23.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/23_1.gif`,
@@ -301,9 +301,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ھ',
-        imgSrc: '',
-        imgName: 'ھ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-bee.png`,
+        imgName: 'ھەرە',
+        imgNameTranslation: 'Bee',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/24.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/24_1.gif`,
@@ -314,9 +314,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئو',
-        imgSrc: '',
-        imgName: 'ئو',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-fire.png`,
+        imgName: 'ئوت',
+        imgNameTranslation: 'Fire',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/25.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/25_1.gif`,
@@ -327,9 +327,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئۇ',
-        imgSrc: '',
-        imgName: 'ئۇ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-flour.png`,
+        imgName: 'ئۇن',
+        imgNameTranslation: 'Flour',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/26.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/26_1.gif`,
@@ -340,9 +340,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئۆ',
-        imgSrc: '',
-        imgName: 'ئۆ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-home.png`,
+        imgName: 'ئۆي',
+        imgNameTranslation: 'House',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/27.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/27_1.gif`,
@@ -353,9 +353,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئۈ',
-        imgSrc: '',
-        imgName: 'ئۈ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-grapes.png`,
+        imgName: 'ئۈزۈم',
+        imgNameTranslation: 'Grapes',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/28.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/28_1.gif`,
@@ -366,9 +366,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ۋ',
-        imgSrc: '',
-        imgName: 'ۋ',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-bicycle.png`,
+        imgName: 'ۋېلىسىپىت',
+        imgNameTranslation: 'Bicycle',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/29.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/29_1.gif`,
@@ -379,9 +379,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئې',
-        imgSrc: '',
-        imgName: 'ئې',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-bear.png`,
+        imgName: 'ئېيىق',
+        imgNameTranslation: 'Bear',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/30.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/30_1.gif`,
@@ -396,9 +396,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئى',
-        imgSrc: '',
-        imgName: 'ئى',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-dog.png`,
+        imgName: 'ئىت',
+        imgNameTranslation: 'Dob',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/31.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/31_1.gif`,
@@ -413,9 +413,9 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ي',
-        imgSrc: '',
-        imgName: 'ي',
-        imgNameTranslation: '',
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-tiger.png`,
+        imgName: 'يولۋاس',
+        imgNameTranslation: 'Tiger',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/32.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/32_1.gif`,
