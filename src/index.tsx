@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client'
 
 import { App } from './App'
 import { AppContextProvider } from './hooks/useAppContext'
+import { Portal } from './Portal'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -12,6 +13,7 @@ root.render(
     <React.StrictMode>
         <AppContextProvider>
             <App />
+            <Portal />
         </AppContextProvider>
     </React.StrictMode>
 )

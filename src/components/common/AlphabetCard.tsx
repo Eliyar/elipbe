@@ -8,6 +8,7 @@ import AudioPlayer from './AudioPlayer'
 import { FlipCard } from './FlipCard'
 import { IconButton } from './IconButton'
 import { UighurTextStyles } from './styles'
+import { WritingModalTrigger } from './WritingModalTrigger'
 
 interface Props {
     className?: string
@@ -208,16 +209,11 @@ export const AlphabetCard = ({
                                 }
                             />
                             <div className="controls">
-                                {!isAnimating && (
-                                    <IconButton
-                                        icon="stylus_note"
-                                        onClick={() =>
-                                            onToggleAnimation(
-                                                alphabetItem.alphabet
-                                            )
-                                        }
-                                    />
-                                )}
+                                <WritingModalTrigger
+                                    alphabetItem={alphabetItem}
+                                >
+                                    <IconButton icon="stylus_note" />
+                                </WritingModalTrigger>
                                 <AudioPlayer audioSrc={alphabetItem.audioSrc}>
                                     <IconButton icon="brand_awareness" />
                                 </AudioPlayer>

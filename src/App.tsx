@@ -1,4 +1,6 @@
 import classNames from 'classnames'
+import React from 'react'
+import Popup from 'reactjs-popup'
 import styled from 'styled-components'
 
 import { AlphabetsList } from './components/AlphabetsList'
@@ -17,6 +19,13 @@ export const App = ({ className }: Props) => {
             <Header />
             <AlphabetsList />
             <Footer />
+
+            <Popup
+                trigger={<button className="button"> Open Modal </button>}
+                modal
+            >
+                <span> Modal content </span>
+            </Popup>
         </Styles>
     )
 }
