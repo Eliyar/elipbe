@@ -203,6 +203,9 @@ export const AlphabetCard = ({
                                 className="alts-list"
                                 alts={alphabetItem.alts}
                                 isAnimating={isAnimating}
+                                onToggleAnimation={() =>
+                                    onToggleAnimation(alphabetItem.alphabet)
+                                }
                             />
                             <div className="controls">
                                 {!isAnimating && (
@@ -279,13 +282,23 @@ const AltsList = ({
     className,
     alts,
     isAnimating,
+    onToggleAnimation,
 }: {
     className?: string
     alts: string[]
     isAnimating: boolean
+    onToggleAnimation(): void
 }) => {
     return (
-        <div className={classNames(className)}>
+        <div
+            className={classNames(className)}
+            onClick={(event) => {
+                if (!isAnimating) {
+                    event.stopPropagation()
+                    onToggleAnimation()
+                }
+            }}
+        >
             <div>
                 {alts.map((imgSrc, idx) => {
                     if (!isAnimating) {
