@@ -105,6 +105,7 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
         flex-wrap: wrap;
         background-color: #d5d5d5;
         width: 100%;
+        direction: rtl;
 
         img {
             margin-left: 32px;
