@@ -398,7 +398,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
         alphabet: 'ئى',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-dog.png`,
         imgName: 'ئىت',
-        imgNameTranslation: 'Dob',
+        imgNameTranslation: 'Dog',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/31.wav`,
         alts: [
             `${process.env.PUBLIC_URL}/assets/images/alts/31_1.gif`,
