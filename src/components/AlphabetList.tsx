@@ -14,7 +14,7 @@ const Styles = styled.div`
     direction: rtl;
 `
 
-export const AlphabetsList = ({ className }: Props) => {
+export const AlphabetList = ({ className }: Props) => {
     const { isMd, windowWidth } = useMediaQuery()
 
     return (

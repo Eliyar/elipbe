@@ -12,7 +12,6 @@ interface Props {
 
 const Styles = styled.div<{ $isMd: boolean }>`
     border-radius: 50%;
-    /* TODO: color var */
     background-color: #4444441c;
     display: flex;
     align-items: center;
@@ -46,7 +45,6 @@ const Styles = styled.div<{ $isMd: boolean }>`
     }
 
     &:hover {
-        /* TODO: color var */
         background-color: #4444442c;
         transform: scale(1.1);
 
