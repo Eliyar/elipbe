@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Popup from 'reactjs-popup'
 import styled, { css } from 'styled-components'
 
@@ -113,6 +114,20 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
         }
     }
 
+    canvas {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .canvas-reset {
+        margin: 24px;
+        display: inline-flex;
+    }
+
     ${({ $isMd }) =>
         $isMd &&
         css`
@@ -151,6 +166,10 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
                 img {
                     height: 50px;
                 }
+            }
+
+            .canvas-reset {
+                margin: 12px;
             }
         `}
 `
@@ -205,6 +224,8 @@ export const WritingModal = ({
                     </div>
 
                     <AltsList className="alts-list" alts={alphabetItem.alts} />
+
+                    <Canvas />
                 </div>
             </Styles>
         </Popup>
@@ -248,6 +269,203 @@ const AltsList = ({
                 {alts.map((imgSrc, idx) => {
                     return <img key={idx} src={imgSrc} alt="" />
                 })}
+            </div>
+        </div>
+    )
+}
+
+const CANVAS_WIDTH = 800
+const CANVAS_HEIGHT = 400
+const CANVAS_LINE_WIDTH = 6
+
+const Canvas = () => {
+    const canvasRef = useRef<any>(null)
+    const [canvasWidth, setCanvasWidth] = useState(CANVAS_WIDTH)
+    const [canvasHeight, setCanvasHeight] = useState(CANVAS_HEIGHT)
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+
+        function handleResize() {
+            const parentNode = canvasRef.current?.parentNode
+            if (!parentNode) {
+                return
+            }
+
+            const width = parentNode.clientWidth
+            const height = parentNode.clientHeight
+            setCanvasWidth(width)
+            setCanvasHeight(height)
+        }
+        handleResize()
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
+    const drawGuidingLines = useCallback(
+        (gap: number = 1) => {
+            const canvas = canvasRef.current
+            const context = canvas?.getContext('2d')
+            if (!context) {
+                return
+            }
+
+            const offset = -50
+
+            // Draw first solid line
+            context.beginPath()
+            context.moveTo(0, canvasHeight / 4 + offset * gap)
+            context.lineTo(canvasWidth, canvasHeight / 4 + offset * gap)
+            context.lineWidth = 2
+            context.strokeStyle = '#454bb13c'
+            context.stroke()
+
+            // Draw second solid line
+            context.beginPath()
+            context.moveTo(0, (2 * canvasHeight) / 4 + offset * gap)
+            context.lineTo(canvasWidth, (2 * canvasHeight) / 4 + offset * gap)
+            context.lineWidth = 2
+            context.strokeStyle = '#454bb13c'
+            context.stroke()
+
+            // Draw dashed line
+            context.beginPath()
+            context.setLineDash([8, 8]) // Dashed line pattern
+            context.moveTo(
+                0,
+                canvasHeight / 4 + canvasHeight / 4 / 2 + offset * gap
+            )
+            context.lineTo(
+                canvasWidth,
+                canvasHeight / 4 + canvasHeight / 4 / 2 + offset * gap
+            )
+            context.lineWidth = 2
+            context.strokeStyle = '#454bb13c'
+            context.stroke()
+            context.setLineDash([]) // Reset to solid line
+        },
+        [canvasWidth, canvasHeight]
+    )
+
+    useEffect(() => {
+        let isDrawing = false
+        let points: any[] = []
+
+        const canvas: any = canvasRef.current
+        if (!canvas) {
+            return
+        }
+
+        const context = canvas.getContext('2d')
+
+        drawGuidingLines(1)
+        drawGuidingLines(-1)
+        drawGuidingLines(-3)
+
+        const startDrawing = (event: any) => {
+            try {
+                event.stopPropagation()
+            } catch (error) {
+                console.error(error)
+            }
+
+            const rect = canvas.getBoundingClientRect()
+            const x = event.clientX - rect.left
+            const y = event.clientY - rect.top
+
+            isDrawing = true
+            points = [{ x, y }]
+        }
+
+        const draw = (event: any) => {
+            try {
+                event.stopPropagation()
+            } catch (error) {
+                console.error(error)
+            }
+
+            if (!isDrawing) {
+                return
+            }
+
+            const rect = canvas.getBoundingClientRect()
+            const x = event.clientX - rect.left
+            const y = event.clientY - rect.top
+
+            context.beginPath()
+            context.moveTo(
+                points[points.length - 1].x,
+                points[points.length - 1].y
+            )
+            context.lineTo(x, y)
+            context.lineWidth = CANVAS_LINE_WIDTH
+            context.lineCap = 'round'
+            context.strokeStyle = 'rgba(69, 75, 177, 0.9)'
+            context.stroke()
+
+            points = [...points, { x, y }]
+        }
+
+        const endDrawing = () => {
+            isDrawing = false
+        }
+
+        canvas.addEventListener('mousedown', startDrawing)
+        canvas.addEventListener('mousemove', draw)
+        document.addEventListener('mouseup', endDrawing)
+
+        canvas.addEventListener('touchstart', (event: any) => {
+            try {
+                event.preventDefault()
+            } catch (error) {
+                console.error(error)
+            }
+            startDrawing(event.touches[0])
+        })
+
+        canvas.addEventListener('touchmove', (event: any) => {
+            try {
+                event.preventDefault()
+            } catch (error) {
+                console.error(error)
+            }
+            draw(event.touches[0])
+        })
+
+        return () => {
+            canvas.removeEventListener('mousedown', startDrawing)
+            canvas.removeEventListener('mousemove', draw)
+            document.removeEventListener('mouseup', endDrawing)
+        }
+    }, [drawGuidingLines])
+
+    const resetCanvas = useCallback(() => {
+        const canvas = canvasRef.current
+        const context = canvas?.getContext('2d')
+        context.clearRect(0, 0, canvas.width, canvas.height)
+
+        drawGuidingLines(1)
+        drawGuidingLines(-1)
+        drawGuidingLines(-3)
+    }, [drawGuidingLines])
+
+    return (
+        <div>
+            <div>
+                <canvas
+                    ref={canvasRef}
+                    width={canvasWidth}
+                    height={canvasHeight}
+                />
+            </div>
+            <div className="text-right">
+                <IconButton
+                    className="canvas-reset"
+                    icon="refresh"
+                    onClick={resetCanvas}
+                />
             </div>
         </div>
     )
