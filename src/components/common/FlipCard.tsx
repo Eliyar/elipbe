@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Styles = styled.div<{ $width: number; $height: number }>`
-    --border-radius: 32px;
+    --border-radius: 24px;
     --transition-duration: 0.3s;
 
     transition: all var(--transition-duration) ease;

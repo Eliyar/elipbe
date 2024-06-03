@@ -353,7 +353,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     },
     {
         alphabet: 'ئۈ',
-        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-grapes.png`,
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-grapes2.png`,
         imgName: 'ئۈزۈم',
         imgNameTranslation: 'Grapes',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/28.wav`,

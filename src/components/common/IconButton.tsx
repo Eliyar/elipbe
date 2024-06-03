@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { Icon } from './Icon'
 
 interface Props {
@@ -9,21 +10,45 @@ interface Props {
     onClick?(): void
 }
 
-const Styles = styled.div`
-    min-width: 56px;
-    min-height: 56px;
-    max-width: 56px;
-    max-height: 56px;
+const Styles = styled.div<{ $isMd: boolean }>`
     border-radius: 50%;
     /* TODO: color var */
-    background-color: #ccc;
+    background-color: #4444441c;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease;
+
+    ${({ $isMd }) =>
+        $isMd
+            ? css`
+                  min-width: 32px;
+                  min-height: 32px;
+                  max-width: 32px;
+                  max-height: 32px;
+                  .icon {
+                      font-size: 20px;
+                  }
+              `
+            : css`
+                  min-width: 56px;
+                  min-height: 56px;
+                  max-width: 56px;
+                  max-height: 56px;
+
+                  .icon {
+                      font-size: 32px;
+                  }
+              `}
+
+    .icon {
+        color: #444444;
+    }
 
     &:hover {
         /* TODO: color var */
-        background-color: #aaa;
+        background-color: #4444442c;
+        transform: scale(1.1);
 
         &.hover {
             cursor: pointer;
@@ -32,6 +57,8 @@ const Styles = styled.div`
 `
 
 export const IconButton = ({ className, icon, onClick }: Props) => {
+    const { isMd } = useMediaQuery()
+
     return (
         <Styles
             className={classNames(className, {
@@ -43,8 +70,9 @@ export const IconButton = ({ className, icon, onClick }: Props) => {
                     onClick()
                 }
             }}
+            $isMd={isMd}
         >
-            <Icon icon={icon} />
+            <Icon className="icon" icon={icon} />
         </Styles>
     )
 }

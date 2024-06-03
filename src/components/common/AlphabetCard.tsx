@@ -6,7 +6,6 @@ import { AlphabetItem } from '../../constants'
 import { useAppContext } from '../../hooks/useAppContext'
 import AudioPlayer from './AudioPlayer'
 import { FlipCard } from './FlipCard'
-import { Icon } from './Icon'
 import { IconButton } from './IconButton'
 import { UighurTextStyles } from './styles'
 
@@ -41,32 +40,34 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
 
     .outer-content {
         height: 100%;
-        border-radius: 32px;
+        border-radius: 24px;
         position: relative;
     }
 
-    .inner-content {
-        display: inline-block;
-        position: absolute;
-        top: 24px;
-        right: 32px;
-
-        .primary-letter {
-            font-size: 120px;
-            text-align: right;
-        }
-
-        .secondary-letter {
-            text-align: right;
-        }
-
-        .alt-letter {
-            font-size: 60px;
-            text-align: right;
-        }
-    }
-
     .front-node {
+        .inner-content {
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            right: 32px;
+
+            .primary-letter {
+                font-size: 120px;
+                text-align: right;
+                position: relative;
+                top: -20px;
+            }
+
+            .secondary-letter {
+                text-align: right;
+            }
+
+            .alt-letter {
+                font-size: 60px;
+                text-align: right;
+            }
+        }
+
         img {
             width: 280px;
             height: auto;
@@ -100,14 +101,19 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
             justify-content: center;
             flex-wrap: wrap;
             background-color: #d5d5d5;
-            border-radius: 32px;
+            border-radius: 24px;
             width: 100%;
         }
 
         .controls {
             position: absolute;
             top: 16px;
-            left: 0px;
+            left: 16px;
+            display: flex;
+
+            & > div {
+                margin-right: 8px;
+            }
         }
     }
 
@@ -118,23 +124,25 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
             font-size: 18px;
 
             .inner-content {
-                top: 10px;
-                right: 20px;
-
-                .primary-letter {
-                    font-size: 50px !important;
-                }
-
-                .alt-letter {
-                    font-size: 32px !important;
-                }
+                top: 16px !important;
+                right: 20px !important;
             }
 
-            .front-node img {
+            .primary-letter {
+                font-size: 50px !important;
+            }
+
+            .front-node {
                 img {
                     width: 140px;
                     top: -20px;
                     left: -8px;
+                }
+            }
+
+            .back-node {
+                img {
+                    height: 28px;
                 }
             }
         `}
@@ -171,19 +179,10 @@ export const AlphabetCard = ({
                             alt={alphabetItem.imgNameTranslation}
                         />
                         <div className="inner-content">
-                            <div
-                                className="primary-letter"
-                                style={{
-                                    top:
-                                        primaryLetterPosTopCorrection[
-                                            alphabetItem.alphabet
-                                        ] ?? undefined,
-                                }}
-                            >
-                                <UighurTextStyles>
-                                    {alphabetItem.alphabet}
-                                </UighurTextStyles>
-                            </div>
+                            <FrontPrimaryLetter
+                                alphabet={alphabetItem.alphabet}
+                                isMd={isMd}
+                            />
                             <div className="secondary-letter">
                                 <UighurTextStyles>
                                     {alphabetItem.imgName}
@@ -196,28 +195,26 @@ export const AlphabetCard = ({
                 backNode={(isFlipped: boolean) =>
                     isFlipped ? (
                         <div className="outer-content">
-                            <div
-                                className="primary-letter"
-                                style={{
-                                    top:
-                                        primaryLetterPosTopCorrection[
-                                            alphabetItem.alphabet
-                                        ] ?? undefined,
-                                }}
-                            >
-                                <UighurTextStyles>
-                                    {alphabetItem.alphabet}
-                                </UighurTextStyles>
-                            </div>
+                            <BackPrimaryLetter
+                                alphabet={alphabetItem.alphabet}
+                                isMd={isMd}
+                            />
                             <AltsList
                                 className="alts-list"
                                 alts={alphabetItem.alts}
                                 isAnimating={isAnimating}
-                                onToggleAnimation={() =>
-                                    onToggleAnimation(alphabetItem.alphabet)
-                                }
                             />
                             <div className="controls">
+                                {!isAnimating && (
+                                    <IconButton
+                                        icon="stylus_note"
+                                        onClick={() =>
+                                            onToggleAnimation(
+                                                alphabetItem.alphabet
+                                            )
+                                        }
+                                    />
+                                )}
                                 <AudioPlayer audioSrc={alphabetItem.audioSrc}>
                                     <IconButton icon="brand_awareness" />
                                 </AudioPlayer>
@@ -230,21 +227,65 @@ export const AlphabetCard = ({
     )
 }
 
+const FrontPrimaryLetter = ({
+    alphabet,
+    isMd,
+}: {
+    alphabet: string
+    isMd: boolean
+}) => {
+    let top = primaryLetterFrontPosTopCorrection[alphabet] ?? 0
+    if (isMd) {
+        top = primaryLetterFrontPosTopCorrectionMd[alphabet] ?? 0
+    }
+
+    return (
+        <div
+            className="primary-letter"
+            style={{
+                top,
+            }}
+        >
+            <UighurTextStyles>{alphabet}</UighurTextStyles>
+        </div>
+    )
+}
+
+const BackPrimaryLetter = ({
+    alphabet,
+    isMd,
+}: {
+    alphabet: string
+    isMd: boolean
+}) => {
+    let top = primaryLetterBackPosTopCorrection[alphabet] ?? undefined
+    if (isMd) {
+        top = primaryLetterBackPosTopCorrectionMd[alphabet] ?? undefined
+    }
+
+    return (
+        <div
+            className="primary-letter"
+            style={{
+                top,
+            }}
+        >
+            <UighurTextStyles>{alphabet}</UighurTextStyles>
+        </div>
+    )
+}
+
 const AltsList = ({
     className,
     alts,
     isAnimating,
-    onToggleAnimation,
 }: {
     className?: string
     alts: string[]
     isAnimating: boolean
-    onToggleAnimation: () => void
 }) => {
     return (
         <div className={classNames(className)}>
-            {!isAnimating && <Icon icon="replay" onClick={onToggleAnimation} />}
-
             <div>
                 {alts.map((imgSrc, idx) => {
                     if (!isAnimating) {
@@ -258,17 +299,37 @@ const AltsList = ({
     )
 }
 
-const primaryLetterPosTopCorrection: Record<string, number> = {
+const primaryLetterFrontPosTopCorrection: Record<string, number> = {
+    پ: -40,
+    ج: -50,
+    چ: -50,
+    خ: -30,
+    ر: -50,
+    غ: -37,
+    ف: -30,
+    ك: 0,
+    گ: 0,
+    ڭ: 0,
+    م: -50,
+    ئې: -30,
+    ئى: -30,
+    ي: -50,
+}
+
+const primaryLetterBackPosTopCorrection: Record<string, number> = {
+    ب: -10,
+    پ: -10,
     ج: -20,
     چ: -20,
     خ: 0,
+    ر: 0,
     س: 0,
     ش: 0,
     غ: 0,
     ف: 0,
     ق: 0,
     ل: 0,
-    م: 0,
+    م: -10,
     ن: 0,
     ئو: 0,
     ئۇ: 0,
@@ -277,4 +338,74 @@ const primaryLetterPosTopCorrection: Record<string, number> = {
     ئې: -10,
     ئى: 0,
     ي: -10,
+}
+
+const primaryLetterFrontPosTopCorrectionMd: Record<string, number> = {
+    ئا: 0,
+    ئە: 0,
+    ب: -10,
+    پ: -17,
+    ت: -5,
+    ج: -20,
+    چ: -20,
+    خ: -13,
+    د: -5,
+    ر: -15,
+    ز: -10,
+    ژ: -10,
+    س: -15,
+    ش: -10,
+    غ: -15,
+    ف: -10,
+    ق: -10,
+    ك: -5,
+    گ: 0,
+    ڭ: 0,
+    ل: -5,
+    م: -15,
+    ن: -10,
+    ھ: -5,
+    ئو: -5,
+    ئۇ: -5,
+    ئۆ: -5,
+    ئۈ: -5,
+    ۋ: -10,
+    ئې: -10,
+    ئى: -5,
+    ي: -20,
+}
+
+const primaryLetterBackPosTopCorrectionMd: Record<string, number> = {
+    ئا: 15,
+    ئە: 15,
+    ب: 0,
+    پ: 0,
+    ت: 10,
+    ج: 0,
+    چ: 0,
+    خ: 10,
+    د: 10,
+    ر: 0,
+    ز: 0,
+    ژ: 10,
+    س: 0,
+    ش: 10,
+    غ: 0,
+    ف: 0,
+    ق: 10,
+    ك: 10,
+    گ: 15,
+    ڭ: 15,
+    ل: 10,
+    م: 0,
+    ن: 0,
+    ھ: 0,
+    ئو: 10,
+    ئۇ: 10,
+    ئۆ: 10,
+    ئۈ: 10,
+    ۋ: 15,
+    ئې: 10,
+    ئى: 10,
+    ي: 0,
 }
