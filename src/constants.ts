@@ -237,7 +237,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     {
         alphabet: 'گ',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/illustration-flowers.png`,
-        imgName: 'گۇل',
+        imgName: 'گۈل',
         imgNameTranslation: 'Flowers',
         audioSrc: `${process.env.PUBLIC_URL}/assets/audio/19.wav`,
         alts: [
