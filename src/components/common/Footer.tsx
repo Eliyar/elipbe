@@ -41,6 +41,7 @@ const Styles = styled.div<{ $isMd: boolean }>`
 
                   .links-wrapper {
                       display: flex;
+                      align-items: center;
 
                       & > div {
                           margin-right: 24px;
@@ -103,10 +104,18 @@ export const Footer = ({ className }: Props) => {
                     'text-right': !isMd,
                 })}
             >
-                <BuyMeACoffeeStyles>Buy me a coffee</BuyMeACoffeeStyles>
                 <ContactMeStyles>
                     <a href="mailto:hello@elipbe.ca">Contact me</a>
                 </ContactMeStyles>
+                <BuyMeACoffeeStyles>
+                    <a
+                        href="https://www.buymeacoffee.com/elipbe"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=elipbe&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" />
+                    </a>
+                </BuyMeACoffeeStyles>
             </div>
         </Styles>
     )
