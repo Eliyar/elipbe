@@ -104,7 +104,9 @@ export const Footer = ({ className }: Props) => {
                 })}
             >
                 <BuyMeACoffeeStyles>Buy me a coffee</BuyMeACoffeeStyles>
-                <ContactMeStyles>Contact me</ContactMeStyles>
+                <ContactMeStyles>
+                    <a href="mailto:hello@elipbe.ca">Contact me</a>
+                </ContactMeStyles>
             </div>
         </Styles>
     )
@@ -143,4 +145,9 @@ const BuyMeACoffeeStyles = styled.div`
 
 const ContactMeStyles = styled.div`
     color: #777;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 `
