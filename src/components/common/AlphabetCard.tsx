@@ -120,7 +120,7 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
     ${({ $isMd }) =>
         $isMd &&
         css`
-            margin: 16px 8px;
+            margin: 24px 8px;
             font-size: 18px;
 
             .inner-content {
@@ -169,8 +169,8 @@ export const AlphabetCard = ({
     return (
         <Styles className={classNames(className)} $colour={colour} $isMd={isMd}>
             <FlipCard
-                width={!isMd ? 375 : 375 * 0.51}
-                height={!isMd ? 260 : 260 * 0.51}
+                width={!isMd ? 375 : 375 * 0.47}
+                height={!isMd ? 260 : 260 * 0.47}
                 onFlip={onFlip}
                 frontNode={
                     <div className="outer-content">
