@@ -15,7 +15,7 @@ const Styles = styled.div`
 `
 
 export const AlphabetsList = ({ className }: Props) => {
-    const { isMd } = useMediaQuery()
+    const { isMd, windowWidth } = useMediaQuery()
 
     return (
         <Styles className={classNames(className)}>
@@ -29,6 +29,7 @@ export const AlphabetsList = ({ className }: Props) => {
                         alphabetItem={alphabetItem}
                         colour={colour}
                         isMd={isMd}
+                        windowWidth={windowWidth}
                     />
                 )
             })}

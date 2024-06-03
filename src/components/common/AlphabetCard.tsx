@@ -15,6 +15,7 @@ interface Props {
     alphabetItem: AlphabetItem
     colour: string
     isMd: boolean
+    windowWidth: number
 }
 
 const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
@@ -121,7 +122,7 @@ const Styles = styled.div<{ $colour: string; $isMd: boolean }>`
     ${({ $isMd }) =>
         $isMd &&
         css`
-            margin: 24px 8px;
+            margin: 8px 6px !important;
             font-size: 18px;
 
             .inner-content {
@@ -154,6 +155,7 @@ export const AlphabetCard = ({
     alphabetItem,
     colour,
     isMd,
+    windowWidth,
 }: Props) => {
     const { isAnimating: checkIsAnimating, onToggleAnimation } =
         useAppContext().selection
@@ -170,8 +172,8 @@ export const AlphabetCard = ({
     return (
         <Styles className={classNames(className)} $colour={colour} $isMd={isMd}>
             <FlipCard
-                width={!isMd ? 375 : 375 * 0.47}
-                height={!isMd ? 260 : 260 * 0.47}
+                width={!isMd ? 375 : windowWidth / 2 - 16}
+                height={!isMd ? 260 : 260 * 0.5}
                 onFlip={onFlip}
                 frontNode={
                     <div className="outer-content">

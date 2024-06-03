@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Styles = styled.div<{ $isMd: boolean }>`
-    padding: 12px;
+    padding: 8px 12px;
     margin-bottom: 100px;
     font-size: 32px;
     font-weight: 600;
