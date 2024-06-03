@@ -27,3 +27,13 @@ body {
         'GRAD'0,
         'opsz'24
 }
+
+// Classes for popup
+.popup-content {
+    padding: 0;
+    background-color: white;
+    border-radius: 24px;
+    border: 0;
+    width: 90%;
+    max-width: 800px;
+}

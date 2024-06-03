@@ -211,6 +211,7 @@ export const AlphabetCard = ({
                             <div className="controls">
                                 <WritingModalTrigger
                                     alphabetItem={alphabetItem}
+                                    colour={colour}
                                 >
                                     <IconButton icon="stylus_note" />
                                 </WritingModalTrigger>

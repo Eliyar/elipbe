@@ -8,6 +8,7 @@ import { OpenWritingModal } from '../../services/event-bus/events'
 interface Props {
     className?: string
     alphabetItem: AlphabetItem
+    colour: string
     children: ReactNode
 }
 
@@ -20,6 +21,7 @@ const Styles = styled.div`
 export const WritingModalTrigger = ({
     className,
     alphabetItem,
+    colour,
     children,
 }: Props) => {
     return (
@@ -29,6 +31,7 @@ export const WritingModalTrigger = ({
                 event.stopPropagation()
                 OpenWritingModal.emit({
                     alphabetItem,
+                    colour,
                 })
             }}
         >

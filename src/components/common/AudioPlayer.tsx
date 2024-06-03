@@ -8,7 +8,11 @@ interface Props {
     children: ReactNode
 }
 
-const Styles = styled.div``
+const Styles = styled.div`
+    &:hover {
+        cursor: pointer;
+    }
+`
 
 const AudioPlayer = ({ className, audioSrc, children }: Props) => {
     const audioRef = useRef<HTMLAudioElement | null>(null)
