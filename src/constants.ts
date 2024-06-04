@@ -117,7 +117,7 @@ export const ALPHABET_ITEMS: AlphabetItem[] = [
     {
         alphabet: 'د',
         imgSrc: `${assetsUrl}/images/illustration-doctor.png`,
-        imgName: 'دوكتور',
+        imgName: 'دوختۇر',
         imgNameTranslation: 'Doctor',
         audioSrc: `${assetsUrl}/audio/9.wav`,
         alts: [
