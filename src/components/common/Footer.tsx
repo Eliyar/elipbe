@@ -113,7 +113,7 @@ export const Footer = ({ className }: Props) => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=elipbe&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" />
+                        <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=elipbe&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" />
                     </a>
                 </BuyMeACoffeeStyles>
             </div>
